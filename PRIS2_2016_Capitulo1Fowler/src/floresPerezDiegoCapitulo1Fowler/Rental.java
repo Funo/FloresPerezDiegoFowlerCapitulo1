@@ -1,4 +1,5 @@
 package floresPerezDiegoCapitulo1Fowler;
+
 class Rental {
 	private Movie _movie;
 	private int _daysRented;
@@ -34,5 +35,12 @@ class Rental {
 			break;
 		}
 		return result;
+	}
+
+	int getFrequentRenterPoints() {
+		if ((getMovie().getPriceCode() == Movie.NEW_RELEASE) && getDaysRented() > 1)
+			return 2;
+		else
+			return 1;
 	}
 }
